@@ -1,0 +1,240 @@
+<!doctype html>
+
+<html>
+<head>
+
+    <title>Learning jQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	
+	<script type="text/javascript" src ="jquery.min.js"></script>
+	
+	<style>
+		
+		.square {
+			width:300px;
+			height:300px;
+			background-color:red;
+			margin-top:10px;
+		
+		}
+		
+		#circle {
+			width:200px;
+			height:200px;
+			border-radius:100px;
+			background-color:green;
+		
+		}
+		
+		#circle2 {
+			width:200px;
+			height:200px;
+			border-radius:100px;
+			background-color:green;
+		
+		}
+		
+		#circle3 {
+			width:300px;
+			height:300px;
+			border-radius:150px;
+			background-color:red;
+		
+		}
+		
+	</style>
+	
+</head>
+
+	
+	
+	
+
+	<body>
+	
+	<!--Click function-->
+	
+	<!--<div class="square"></div>
+	
+	<div class="square"></div>-->
+	
+	
+	<!--Hover function-->
+	
+	<!--<div id="circle"></div>
+	
+	<p id="para">Some Text</p>
+	
+	<iframe width="560" height="315" src="https://comp-hons.uhi.ac.uk/~14002792/academy/">
+        </iframe>-->
+	
+	<!--Button, text fade away-->
+	
+	<p id="para2">This Text fades away....</p>
+	
+	<button id="fader">Fade Away...</button>
+	
+	<button id="faderIn">Fade In...</button>
+	
+	
+	<!--Animating Content-->
+	
+	<div id="circle2"></div>
+	<br />
+	<div id="circle3"></div>
+	
+
+		<script>
+		
+		//Regular Expressions
+		
+		// i - insensitive
+		// g - global
+		/*var regex=/e/g;
+		
+		var string="Regex is Great!";
+		
+		var result = string.match(regex);
+		
+		alert(result);*/
+		
+		//Animating Content 
+		
+		$("div").hover(function() {
+			
+			$(this).animate({
+				width:"400px",
+				height:"400px",
+				borderRadius:"200px",
+				marginLeft:"100px",
+				marginTop:"100px"
+				},1000);
+			});
+			
+			
+			$("div").click(function() {
+			
+			$(this).animate({
+				width:"200px",
+				height:"200px",
+				borderRadius:"100px",
+				marginLeft:"0",
+				marginTop:"0"
+				},1000);
+			});
+			
+			
+		
+		//Fade away button 
+		
+		$("#fader").click(function() {
+			
+				$("#para2").fadeOut(2000, function() {
+				
+					alert("FadeOut Complete !!");
+				
+				});
+				//$("#para2").fadeOut(fast);
+				//$("#para2").fadeOut(slow);
+				
+			});
+		
+		
+			$("#faderIn").click(function() {
+				
+				$("#para2").fadeIn(2000);
+			
+			});
+		
+		//Click function 
+		
+		$("#circle").click(function() {
+			
+				$(".square").fadeOut();
+			
+			});
+		
+	
+		/*$(".square").click(function() {
+			
+				alert($(".square").css("width"));
+			});*/
+			
+		/*$("div").click(function() {
+			
+			//$(this).css("background-color", "#FAD089");
+			//$(this).css("width", "400px");
+			//$(this).css("display","none");
+			//$(this).hide();
+			//$(this).fadeOut();
+			});	*/
+			
+		
+			
+			
+		
+		//hover function 
+		
+		$("#circle").hover(function() {
+			
+				// allows you to return any attribute of an element
+				// returns src
+				
+				// alert the source of the iframed page
+				//alert($("iframe").attr("src"));
+				
+				// change the address/source (src) of the iframed page
+				$("iframe").attr("src", "https://www.ecowebhosting.co.uk");
+			});
+		
+		
+		
+			/*$("#circle").click(function() {
+			
+				//$("p").html("The text has been changed !");
+				
+				alert($("p").html());
+			
+			});*/
+			
+			/*$('.square').click(function() {
+			
+				alert("Square clicked!");
+			
+			});
+			
+			$('div').click(function() {
+			
+				alert("div clicked!");
+			
+			});*/
+		
+		
+		//typeof funcrion allows us to examine a variable and see what type it has
+		//and the type of function will work even if that variable doesn't exists
+		
+		/*if (typeof jQuery !='undefined') {
+		
+			alert('jQuery is installed!');
+			
+			} else {
+			
+			alert('jQuery is NOT installed!');
+			
+			}*/
+			
+			
+		
+		</script>
+	
+	
+	
+
+	
+	
+	</body>
+</html>
